@@ -18,10 +18,12 @@ while principal > 0:
         for j in range(extra_payment_end_month-extra_payment_start_month):
             principal = principal * (1+rate/12) - payment - extra_payment
             total_paid = total_paid + payment + extra_payment
-            print(i,total_paid,principal)
+            print(f'{i:<10} ${total_paid:<25} ${principal}')
             i+=1
     principal = principal * (1+rate/12) - payment
     total_paid = total_paid + payment
-    print(i,total_paid,principal)
-print('Total paid', total_paid)
-print('Months', i)
+    print(f'{i:<10} ${total_paid:<25} ${principal}')
+if principal<0:
+    total_paid=total_paid+principal
+print(f'Total paid : ${total_paid}')
+print(f'Months : {i}')
